@@ -40,6 +40,7 @@ date: 2026-10-29
 category: 保險
 summary: 銷售數字變高，不代表這張保單適合你。先看每個月出不出得來。
 image: 01-foreign-policy.webp
+image_credit: 圖片來源：中央社
 source_name: 中央社
 source_url: https://www.example.com/story
 tags:
@@ -66,6 +67,7 @@ tags:
 | `category` | 是 | 例如 `保險`、`理財`、`利率`、`退休` |
 | `summary` | 是 | 首頁卡片上的一兩句話 |
 | `image` | 是 | 同資料夾的圖片檔名 |
+| `image_credit` | 否 | 圖下的小字。新聞照片寫 `圖片來源：中央社`；沒有可用照片時寫 `示意圖（AI 生成）` |
 | `source_name` | 是 | 原媒體名稱 |
 | `source_url` | 是 | 原文章的 http(s) 連結，顯示在文末「新聞來源」 |
 | `tags` | 否 | 字串清單。含 `範例` 時，頁面上會標成可替換 |
@@ -75,7 +77,7 @@ tags:
 ## 頁面
 
 - 首頁是最新一天的文章，每篇一張大圖、標題、摘要、日期，下面才是更早的日子。
-- 每篇文章有自己的網址：`/column/YYYY-MM-DD/NN-slug/`。大圖、內文，最後是「新聞來源」。
+- 每篇文章有自己的網址：`/column/YYYY-MM-DD/NN-slug/`。大圖、圖說、內文，最後是「新聞來源」。圖說來自 `image_credit`。
 - 分享到 LINE / Facebook 時，用的是該篇圖片。
 - `/archive/` 依日期瀏覽。
 - 頁尾說明：內容僅供參考，不構成投資建議，也不是保險招攬。
@@ -89,6 +91,16 @@ tags:
 Pages 若已經是 **Deploy from a branch**、`main`、`/ (root)`，不用再改。倉庫維持公開。
 
 若自動提交出現 403：Settings → Actions → General → Workflow permissions 改成 Read and write permissions。
+
+## 換成新聞原圖
+
+```bash
+python3 scripts/fetch_source_image.py posts/2026-10-29/01-foreign-policy.md
+```
+
+它讀 `source_url`，抓原文，依序找 `og:image`、`twitter:image`，再找文內第一張夠大的照片。會略過全站預設圖（例如中央社的 `pic_fb.jpg`）、logo，以及寬度大約不到 400 像素的圖。若連結是 Google 新聞，會先跟著轉址到原媒體。
+
+找到的話，存成跟文章同名的 `.webp`（覆蓋原本那張圖），並把 front matter 的 `image` 設成這個檔名、`image_credit` 設成 `圖片來源：` 加上 `source_name`。找不到就保留現有圖片，把 `image_credit` 設成 `示意圖（AI 生成）`，程式仍以 0 結束。不會改文章內文。
 
 ## 選題（不會發布）
 

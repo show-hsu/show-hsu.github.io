@@ -4,6 +4,7 @@ date: 2026-10-28
 category: "保險新聞"
 summary: "金管會定調醫療險理賠轉向「去住院化」與治療導向：舊保單個案融通、新保單朝在宅醫療設計，理賠將依實際治療的醫療必要性審核。"
 image: "03-medical-insurance-outpatient-shift.webp"
+image_credit: "圖片來源：民視新聞網（圖文／CTWANT）"
 source_name: "民視新聞網（圖文／CTWANT）"
 source_url: "https://www.ftvnews.com.tw/news/detail/2026A25W0068"
 tags: [醫療險, 實支實付, 去住院化, 門診手術, 理賠, 金管會]

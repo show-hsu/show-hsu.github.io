@@ -545,6 +545,34 @@ h1 {
   margin-bottom: 16px;
 }
 
+.article-figure {
+  margin: 0 0 16px;
+}
+
+.article-figure .article-cover {
+  margin-bottom: 0;
+  border-radius: 20px 20px 0 0;
+}
+
+.feature-media {
+  display: block;
+}
+
+.image-credit {
+  display: block;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.feature-media .image-credit {
+  padding: 6px 16px 0;
+}
+
+.article-figure .image-credit {
+  padding: 6px 2px 0;
+}
+
 .feature-body {
   display: block;
   padding: 14px 16px 16px;

@@ -4,6 +4,7 @@ date: 2026-10-28
 category: "理財投資"
 summary: "金管會統計今年前8月外幣保單新契約保費年增36%，但占整體比重降到35.11%、為2019年以來同期新低，並再次提醒匯率風險。"
 image: "01-foreign-currency-policies.webp"
+image_credit: "示意圖（AI 生成）"
 source_name: "中央社"
 source_url: "https://www.cna.com.tw/news/afe/202610270281.aspx"
 tags: [外幣保單, 美元保單, 匯率風險, 金管會, 資產配置]

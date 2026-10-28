@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import build_site  # noqa: E402
 import fetch_candidates  # noqa: E402
+import fetch_source_image  # noqa: E402
 
 SAMPLE = """---
 title: 保費怎麼看
@@ -49,6 +50,11 @@ class SiteTests(unittest.TestCase):
         self.assertIn('href="https://example.com/story"', html_body)
         self.assertNotIn("<script>", build_site.render_markdown("小心 <script>alert(1)</script>"))
         self.assertIn("&lt;script&gt;", build_site.render_markdown("小心 <script>alert(1)</script>"))
+        rewritten = fetch_source_image.update_front_matter(SAMPLE, "01-premium.webp", "圖片來源：中央社")
+        self.assertTrue(rewritten.endswith(body))
+        self.assertIn('image_credit: "圖片來源：中央社"', rewritten)
+        self.assertTrue(fetch_source_image.is_generic_url("https://imgcdn.cna.com.tw/www/images/pic_fb.jpg"))
+        self.assertFalse(fetch_source_image.is_generic_url("https://cdn.example.com/news/story-photo.jpg"))
 
     def test_today_posts_build_three_cards(self):
         posts = build_site.load_posts(ROOT)
@@ -64,6 +70,8 @@ class SiteTests(unittest.TestCase):
         for post in posts:
             article = (ROOT / "column" / post["date"] / post["slug"] / "index.html").read_text(encoding="utf-8")
             self.assertIn(post["image_url"], article)
+            if post.get("image_credit"):
+                self.assertIn(post["image_credit"], article)
             self.assertIn("新聞來源", article)
             self.assertIn(post["source_url"], article)
             self.assertIn('property="og:type" content="article"', article)

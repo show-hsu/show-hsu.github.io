@@ -214,6 +214,7 @@ def load_posts(root: Path) -> list[dict]:
                 "image_url": f"/posts/{day}/{image_name}",
                 "source_name": meta["source_name"].strip(),
                 "source_url": meta["source_url"].strip(),
+                "image_credit": str(meta.get("image_credit") or "").strip(),
                 "tags": list(meta.get("tags") or []),
                 "body": body.strip(),
                 "html": render_markdown(body),
@@ -293,9 +294,14 @@ def card(post: dict, *, eager: bool) -> str:
     flag = ""
     if "範例" in post["tags"]:
         flag = '<p class="sample-flag">範例，可替換</p>'
+    credit = ""
+    if post.get("image_credit"):
+        credit = f'<span class="image-credit">{esc(post["image_credit"])}</span>'
     return (
         f'<a class="feature-card" href="/column/{esc(post["date"])}/{esc(post["slug"])}/">'
+        '<span class="feature-media">'
         f'<img src="{esc(post["image_url"])}" alt="" width="1200" height="675" {loading}>'
+        f"{credit}</span>"
         '<span class="feature-body">'
         f'<p class="kicker">{esc(post["category"])}</p>'
         f'<h2>{esc(post["title"])}</h2>'
@@ -348,9 +354,17 @@ def render_article(post: dict) -> str:
     flag = ""
     if "範例" in post["tags"]:
         flag = '<p class="sample-flag">這是範例文章，正式專欄會整組替換。</p>'
+    credit = ""
+    if post.get("image_credit"):
+        credit = f'<figcaption class="image-credit">{esc(post["image_credit"])}</figcaption>'
+    figure = (
+        '<figure class="article-figure">'
+        f'<img class="article-cover" src="{esc(post["image_url"])}" alt="{esc(post["title"])}" width="1200" height="675">'
+        f"{credit}</figure>"
+    )
     return (
         "<article>"
-        f'<img class="article-cover" src="{esc(post["image_url"])}" alt="{esc(post["title"])}的插圖" width="1200" height="675">'
+        f"{figure}"
         f'<p class="kicker">{esc(post["category"])}</p>'
         f'<h1>{esc(post["title"])}</h1>'
         f'<p class="edition-meta"><time datetime="{esc(post["date"])}">{esc(format_date(post["date"]))}</time> · {weekday_label(post["date"])}</p>'
