@@ -1,34 +1,32 @@
-name: 每日新聞
+name: 發布專欄
 
 on:
-  schedule:
-    # 23:00 UTC = 07:00 台北時間（UTC+8）。GitHub 排程可能晚幾分鐘到幾十分鐘。
-    - cron: "0 23 * * *"
-  workflow_dispatch:
   push:
     branches:
       - main
     paths:
-      - "data/commentary/**"
+      - "posts/**"
       - "data/about.md"
       - "templates/**"
       - "assets/style.css"
       - "assets/favicon.svg"
       - "assets/og.png"
-      - "scripts/**"
-      - "config/**"
+      - "scripts/build_site.py"
+      - "config/settings.json"
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: daily-news
+  group: build-posts
   cancel-in-progress: false
 
 jobs:
   publish:
+    if: ${{ github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip ci]') }}
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
     steps:
       - name: 取出程式
         uses: actions/checkout@v4
@@ -38,30 +36,24 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: 執行測試
-        run: python -m unittest scripts/test_generate.py
+      - name: 測試
+        run: python3 -m unittest scripts/test_site.py
 
       - name: 產生頁面
         env:
           PYTHONIOENCODING: utf-8
           TZ: Asia/Taipei
-        run: |
-          if [ "${{ github.event_name }}" = "push" ]; then
-            python scripts/generate.py --rebuild-only
-          else
-            python scripts/generate.py
-          fi
+        run: python3 scripts/build_site.py
 
-      - name: 提交並推送
+      - name: 提交頁面
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- index.html sitemap.xml archive about/index.html data/editions data/commentary
+          git add -- index.html sitemap.xml about archive column
           git status --short
           if git diff --staged --quiet; then
-            echo "沒有需要更新的內容"
+            echo "沒有需要更新的頁面"
             exit 0
           fi
-          DATE=$(TZ=Asia/Taipei date +%F)
-          git commit -m "chore: 更新 ${DATE} 金融保險理財日報"
+          git commit -m "build: 更新專欄頁面 [skip ci]"
           git push
