@@ -15,8 +15,6 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-from PIL import Image
-
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_site  # noqa: E402
 
@@ -140,7 +138,8 @@ def article_images(page: str, base: str) -> list[str]:
     return found
 
 
-def download_image(url: str, referer: str) -> Image.Image | None:
+def download_image(url: str, referer: str):
+    from PIL import Image
     request = urllib.request.Request(
         url,
         headers={"User-Agent": BROWSER, "Accept": "image/avif,image/webp,image/*,*/*", "Referer": referer},
@@ -163,7 +162,8 @@ def download_image(url: str, referer: str) -> Image.Image | None:
     return image
 
 
-def to_rgb(image: Image.Image) -> Image.Image:
+def to_rgb(image):
+    from PIL import Image
     if image.mode == "RGB":
         return image
     if image.mode in {"RGBA", "LA"}:
@@ -256,6 +256,8 @@ def apply(post_path: Path) -> int:
         post_path.write_text(update_front_matter(original, image_name, AI_CREDIT), encoding="utf-8")
         print(f"[示意圖] {post_path.name} 保留 {image_name}")
         return 0
+    from PIL import Image
+
     rgb = to_rgb(chosen)
     if rgb.width > 1600:
         height = round(rgb.height * 1600 / rgb.width)

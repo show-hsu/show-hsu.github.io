@@ -95,8 +95,11 @@ Pages 若已經是 **Deploy from a branch**、`main`、`/ (root)`，不用再改
 ## 換成新聞原圖
 
 ```bash
+python3 -m pip install pillow
 python3 scripts/fetch_source_image.py posts/2026-10-29/01-foreign-policy.md
 ```
+
+這個指令才需要 Pillow。每天發布網頁的流程不用它。
 
 它讀 `source_url`，抓原文，依序找 `og:image`、`twitter:image`，再找文內第一張夠大的照片。會略過全站預設圖（例如中央社的 `pic_fb.jpg`）、logo，以及寬度大約不到 400 像素的圖。若連結是 Google 新聞，會先跟著轉址到原媒體。
 
