@@ -66,7 +66,7 @@ class SiteTests(unittest.TestCase):
         self.assertEqual(home.count('class="feature-card"'), 3)
         self.assertIn('<meta property="og:title" content="藝世錄金融理財日報">', home)
         self.assertIn("我是許欣霈（Show），在富邦人壽擔任保險業務，同時負責單位主管的工作，也是藝世錄團隊的領導者。", home)
-        self.assertIn('property="og:image" content="https://show-hsu.github.io/assets/og.jpg"', home)
+        self.assertIn('property="og:image" content="https://yishilu-daily.github.io/assets/og.jpg"', home)
         self.assertIn('property="og:image:type" content="image/jpeg"', home)
         self.assertIn('property="og:image:width" content="1200"', home)
         self.assertIn('property="og:image:height" content="630"', home)

@@ -22,7 +22,7 @@ def main() -> None:
     draw.text((560, 320), "金融理財日報", font=title, fill="#f6f3ec")
     draw.text((560, 420), "保險 · 理財 · 利率 · 退休", font=sub, fill="#d4b36a")
     draw.rectangle((0, 560, 1200, 630), fill="#d4b36a")
-    draw.text((72, 578), "show-hsu.github.io", font=sub, fill="#1c1c1c")
+    draw.text((72, 578), "yishilu-daily.github.io", font=sub, fill="#1c1c1c")
     image.save(ROOT / "assets" / "og.png", "PNG", optimize=True)
 
 

@@ -14,7 +14,7 @@ from xml.etree import ElementTree as ET
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
-USER_AGENT = "ShowDailyNews/1.0 (+https://show-hsu.github.io)"
+USER_AGENT = "ShowDailyNews/1.0 (+https://yishilu-daily.github.io)"
 PER_FEED = 8
 
 

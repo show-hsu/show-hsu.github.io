@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://show-hsu.github.io/sitemap.xml
+Sitemap: https://yishilu-daily.github.io/sitemap.xml
