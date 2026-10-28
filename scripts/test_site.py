@@ -50,22 +50,25 @@ class SiteTests(unittest.TestCase):
         self.assertNotIn("<script>", build_site.render_markdown("小心 <script>alert(1)</script>"))
         self.assertIn("&lt;script&gt;", build_site.render_markdown("小心 <script>alert(1)</script>"))
 
-    def test_sample_post_builds_without_old_link_list(self):
+    def test_today_posts_build_three_cards(self):
         posts = build_site.load_posts(ROOT)
-        self.assertTrue(any(post["slug"] == "01-sample" for post in posts))
+        categories = {post["category"] for post in posts}
+        self.assertTrue({"理財投資", "保險新聞"} <= categories)
+        self.assertFalse(any(post["slug"] == "01-sample" for post in posts))
         build_site.build(ROOT)
         home = (ROOT / "index.html").read_text(encoding="utf-8")
-        article = (ROOT / "column" / "2026-10-28" / "01-sample" / "index.html").read_text(encoding="utf-8")
-        self.assertIn("今天的專欄", home)
-        self.assertIn("/posts/2026-10-28/01-sample.webp", home)
+        self.assertEqual(home.count('class="feature-card"'), 3)
+        self.assertNotIn("01-sample", home)
         self.assertNotIn("台股ETF上週受益人數", home)
         self.assertNotIn("本日來源", home)
-        self.assertIn("新聞來源", article)
-        self.assertIn('property="og:image" content="https://show-hsu.github.io/posts/2026-10-28/01-sample.webp"', article)
-        self.assertIn('property="og:type" content="article"', article)
-        self.assertIn("不構成投資建議", article)
-        self.assertIn("也不是保險招攬", article)
-        self.assertIn("範例文章", article)
+        for post in posts:
+            article = (ROOT / "column" / post["date"] / post["slug"] / "index.html").read_text(encoding="utf-8")
+            self.assertIn(post["image_url"], article)
+            self.assertIn("新聞來源", article)
+            self.assertIn(post["source_url"], article)
+            self.assertIn('property="og:type" content="article"', article)
+            self.assertIn("不構成投資建議", article)
+            self.assertIn("也不是保險招攬", article)
 
     def test_workflow_publishes_posts_not_rss(self):
         workflow = (ROOT / ".github" / "workflows" / "build-posts.yml").read_text(encoding="utf-8")
