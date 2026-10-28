@@ -1,0 +1,489 @@
+{
+  "version": 1,
+  "date": "2026-10-28",
+  "generated_at": "2026-10-28T16:02:23+08:00",
+  "feed_status": [
+    {
+      "id": "gnews-insurance",
+      "label": "Google 新聞／保險",
+      "ok": true,
+      "fetched": 100,
+      "kept": 69,
+      "error": ""
+    },
+    {
+      "id": "gnews-life",
+      "label": "Google 新聞／壽險",
+      "ok": true,
+      "fetched": 49,
+      "kept": 41,
+      "error": ""
+    },
+    {
+      "id": "gnews-fsc",
+      "label": "Google 新聞／金管會",
+      "ok": true,
+      "fetched": 100,
+      "kept": 96,
+      "error": ""
+    },
+    {
+      "id": "gnews-declared-rate",
+      "label": "Google 新聞／宣告利率",
+      "ok": true,
+      "fetched": 30,
+      "kept": 20,
+      "error": ""
+    },
+    {
+      "id": "gnews-rate",
+      "label": "Google 新聞／央行利率",
+      "ok": true,
+      "fetched": 100,
+      "kept": 77,
+      "error": ""
+    },
+    {
+      "id": "gnews-fx",
+      "label": "Google 新聞／匯率",
+      "ok": true,
+      "fetched": 73,
+      "kept": 65,
+      "error": ""
+    },
+    {
+      "id": "gnews-retire",
+      "label": "Google 新聞／退休",
+      "ok": true,
+      "fetched": 80,
+      "kept": 72,
+      "error": ""
+    },
+    {
+      "id": "gnews-tax",
+      "label": "Google 新聞／稅務",
+      "ok": true,
+      "fetched": 100,
+      "kept": 86,
+      "error": ""
+    },
+    {
+      "id": "gnews-stock",
+      "label": "Google 新聞／台股",
+      "ok": true,
+      "fetched": 100,
+      "kept": 96,
+      "error": ""
+    },
+    {
+      "id": "gnews-pf",
+      "label": "Google 新聞／理財",
+      "ok": true,
+      "fetched": 100,
+      "kept": 89,
+      "error": ""
+    },
+    {
+      "id": "cna-finance",
+      "label": "中央社",
+      "ok": true,
+      "fetched": 20,
+      "kept": 10,
+      "error": ""
+    },
+    {
+      "id": "ltn-business",
+      "label": "自由時報",
+      "ok": true,
+      "fetched": 40,
+      "kept": 12,
+      "error": ""
+    },
+    {
+      "id": "udn-money",
+      "label": "經濟日報",
+      "ok": true,
+      "fetched": 20,
+      "kept": 2,
+      "error": ""
+    },
+    {
+      "id": "cnyes-headline",
+      "label": "鉅亨網",
+      "ok": true,
+      "fetched": 99,
+      "kept": 42,
+      "error": ""
+    },
+    {
+      "id": "cnyes-tw-stock",
+      "label": "鉅亨網",
+      "ok": true,
+      "fetched": 91,
+      "kept": 25,
+      "error": ""
+    },
+    {
+      "id": "yahoo-finance",
+      "label": "Yahoo財經",
+      "ok": true,
+      "fetched": 30,
+      "kept": 10,
+      "error": ""
+    }
+  ],
+  "categories": [
+    {
+      "id": "insurance",
+      "name": "保險新聞",
+      "blurb": "壽險、產險、保單與金管會監理",
+      "stale_hours": 72,
+      "items": [
+        {
+          "title": "新竹嘉晶電子火災！恐怖黑煙竄天、塑膠味瀰漫 官方曝影響：已保全額保險",
+          "url": "https://news.google.com/rss/articles/CBMiyAJBVV95cUxQejNtSEpidTJJRklHUHk0NW1ZRzI2NVJ6WWNndm9Hb3pXMjNQTFBzcnp0ejQwMEpHczN6OS0wN2FTcHhDRXpwNFVGTnREMEtsSksxQWxRTTA2MUlYVjN2YkI4UjBOUDVjZHRTVmRLQnRWZkNtMFB5aWdFQWNjN1VRTUp0REI2enZaSWlsZk5CNVljOVVmeWVFenkyaDMzR2V3MjJDWlNHZjdTOUVPZXZiRTU0dVB2cUtpRXVvSWNEVmJhenA1UEl3ejNCMmdydmRzQjMwWUFqOWFmVWtGdklkRVZmajVVN0l0NXQ5ZTNvSmsyOU5nUHF1ZktWeFc0NGJpQVhVcWt4VXNCMjJ5QTFUd0ItdExweGM5cGoydUVZdUU3OHFrc3FKT2RseS1ZY21DQ2hzbFpjS0JZX1AwaHNNUkF5VmNBZHJp?oc=5",
+          "source": "Yahoo新聞",
+          "published_at": "2026-10-28T15:40:00+08:00",
+          "snippet": "",
+          "feed_id": "gnews-insurance",
+          "image": "/assets/covers/insurance.svg",
+          "image_source": "default"
+        },
+        {
+          "title": "富邦產險推全新一年期「海外打工度假保險」最高3萬美金 SOS 緊急救援",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPaU0yUk1xRHpkUWduZFBHelVRRXdfSkJ3TGl2bzNnRkJuNDdpaVBZTFhOV0lKRmdkSjZIaEQxYUNYaUVHQ0JqbDBBSHQ3aktXcVZJUnd2WFZ4YWNnUHVvQ29JazcxS05RQjE5M2ZZZnBfZzZEVkg2d29JYVd1UTE0SVlxbG7SAV9BVV95cUxNc080czlESGpnLU9lNEFuRE0xcnBobTBvWFNnRjU3M1FTanpNRy1reGN3Wm5RY1plemdiNXY0RUF0aXhOUEs0S1pXUF9RSGJQOGI3MmdNYW85OEFDMmxERQ?oc=5",
+          "source": "經濟日報",
+          "published_at": "2026-10-28T12:15:31+08:00",
+          "snippet": "",
+          "feed_id": "gnews-insurance",
+          "image": "/assets/covers/insurance.svg",
+          "image_source": "default"
+        },
+        {
+          "title": "股市與颱風假脫鉤？楊金龍：視金管會態度、央行配合外匯面",
+          "url": "https://www.cna.com.tw/news/afe/202610280052.aspx",
+          "source": "中央社",
+          "published_at": "2026-10-28T10:53:50+08:00",
+          "snippet": "民進黨台北市長參選人沈伯洋提出股市與颱風天停班課脫鉤，引發討論。中央銀行總裁楊金龍今天表示，此議題涉及層面很大，將視金管會態度，央行再於外匯方面進行配合。",
+          "feed_id": "cna-finance",
+          "image": "https://imgcdn.cna.com.tw/www/webphotos/WebCover/800/20261028/1547x1159_456351301044.jpg",
+          "image_source": "og"
+        },
+        {
+          "title": "中國人壽壽險公司推出兩款分紅型保險新品",
+          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE42ZmN1U1BORDEweG5rM3hLMS12UGdqeDk0SFFJUU02ZHIxWFBzQ1Q5dTZ0dEQtTDZOVjlHcFRNVWNWNW0yb2xiVVJsbGQzVDdtM040c2ducGFvQTNKMi1BTlZHZ0I?oc=5",
+          "source": "觀點網",
+          "published_at": "2026-10-28T09:16:18+08:00",
+          "snippet": "",
+          "feed_id": "gnews-insurance",
+          "image": "/assets/covers/insurance.svg",
+          "image_source": "default"
+        },
+        {
+          "title": "壽險公司為何不能長期「養地」？宏泰淡海案背後的保戶資金與監理紅線",
+          "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5nS1BvYzl1Y3lSRVd4SjNkMkQxcVNpdmNxXzdvU0Z1cWJmTVc1b1NLS1N0c2ZzTkZLU2k5bFRjaElTdzVhbTk4WjcyU2I0MFBsSDBXTHpoU2F0dF9sa1N5dE80ZzRBZ9IBa0FVX3lxTE5hZjJFaE1FR1JrVDV2ZkdGVDFLOUNjU0E2ZjJYRGduUTdXSWtZOUlZZmVIZE1WMnBYbE1yaUdFV1pvS2Z6NDRBdXQzYnNvaHRlZDVSUFRRdDBEQnRfTU1FVU0xVGt6TWJGMWo4?oc=5",
+          "source": "鏡週刊",
+          "published_at": "2026-10-28T08:30:00+08:00",
+          "snippet": "獨家/地王瞞不了真相5/壽險公司為何不能長期「養地」？宏泰淡海案背後的保戶資金與監理紅線 鏡週刊Mirror Media",
+          "feed_id": "gnews-insurance",
+          "image": "/assets/covers/insurance.svg",
+          "image_source": "default"
+        },
+        {
+          "title": "100歲仍每日返工簽單！韓傳奇保險員入行43年 獲公司特設致敬禮",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE85T2l6MlVsZGRwVW9KdGlBNTRvMlN6ZVBoalpDc0dtR0VsLVRmWm9FTW9YVkh6bzE0clRpUGtrRTNDV2hBZ3NKczJJbjFOdw?oc=5",
+          "source": "香港01",
+          "published_at": "2026-10-28T08:10:30+08:00",
+          "snippet": "",
+          "feed_id": "gnews-insurance",
+          "image": "/assets/covers/insurance.svg",
+          "image_source": "default"
+        },
+        {
+          "title": "金融建言五案退出 壽險董監鬆綁、資金回台2.0為何出局？",
+          "url": "https://news.google.com/rss/articles/CBMi4gJBVV95cUxNNmlWT0VMcFVnZU8tQ3NmR2xpbFFIakhQRWpfTWJFS19MWmQ3Q0ZuZG9obVZ6dWVCR1NaTnNkTVVXc01wWDkxYW83NmtteFRJWWZOYU1sWXU2VG1rQVFQVHRKUjdUZ0F2STN0cTg2bkI5SUhEMHZJVTJtM09HUXYtNUpWR1pSMGVUOHZKUjU1Rmt2VGlXd3I1cU1MYzBVbzNlY3lDeXJlN2FfN2xmNm9jYUJmTlZDaGZxN1RiWF9yNHFkX3dmLWFvTEJNRkNtX0hmbVRPUkdmajNLQ0RQQURhR1N1NXBaZkJxYXFMTEpmeHZLUVl1N21mWnB3SFY2QlBHVnplaTJ3SU04QUpwNGVuZ08yWXpJMk5BMTFNMm5lYXFoYXIzekZxdkYwY25uaHFvNS1KcVh0dGtRMUlhUkZ3VFJwUWNjbHBjQmVNUW0tZmIwOFdfT2FWelJIT1N4c3UzQUE?oc=5",
+          "source": "Yahoo新聞",
+          "published_at": "2026-10-28T06:46:49+08:00",
+          "snippet": "",
+          "feed_id": "gnews-life",
+          "image": "/assets/covers/insurance.svg",
+          "image_source": "default"
+        },
+        {
+          "title": "保險業前三季海賺近4千億同期新高",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFAyZlRsRjh2TklrUW5ITVU4Y3otcFY4dV9XbWUxTF9qSFBiVmRmV1lnVFE2NGUydHNEWHdaT0ZmSURETS05V3Rhd3RJNDRCM0E2bGdSSXZyZElzeUxxdjRQYmNWS3FIR0Z5ZVZv?oc=5",
+          "source": "中時新聞網",
+          "published_at": "2026-10-28T04:10:00+08:00",
+          "snippet": "保險業前三季海賺近4千億同期新高- 財經要聞- 工商時報 中時新聞網",
+          "feed_id": "gnews-insurance",
+          "image": "/assets/covers/insurance.svg",
+          "image_source": "default"
+        }
+      ]
+    },
+    {
+      "id": "invest",
+      "name": "理財投資",
+      "blurb": "台股、ETF、基金與日常理財",
+      "stale_hours": 36,
+      "items": [
+        {
+          "title": "台股補跌成識貨人補貨機會！這5檔 ETF 湧入十位數資金淨流入",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9TM3hsQWlQLXlOTnI4TC01R1RBSVdJeFNLQktQemVuVTd2WmVlYTZpWkZGcElHaXJXQXR4YW9aRVBUR0p1d2hSQXJ2OEtQZlNycG8zY1RvTV9LUGp4SEh1R285XzZ2Mm1ESm5mejlSNlA2NGNObnpleWNKQk5vaHM?oc=5",
+          "source": "UDN",
+          "published_at": "2026-10-28T13:18:50+08:00",
+          "snippet": "台股補跌成識貨人補貨機會！這5檔 ETF 湧入十位數資金淨流入| 存股族愛ETF | 股市 UDN",
+          "feed_id": "gnews-stock",
+          "image": "/assets/covers/invest.svg",
+          "image_source": "default"
+        },
+        {
+          "title": "台股ETF上週受益人數增32.9萬 總人數1958萬創新高",
+          "url": "https://www.cna.com.tw/news/afe/202610280091.aspx",
+          "source": "中央社",
+          "published_at": "2026-10-28T11:51:13+08:00",
+          "snippet": "受全球AI科技股回檔影響，台股上週下跌1069.83點，連2跌，2週重跌約3272點；根據集保結算所截至10月22日的最新統計資料，上週台股ETF受益人數增32.9萬人。",
+          "feed_id": "cna-finance",
+          "image": "https://imgcdn.cna.com.tw/www/webphotos/WebCover/800/20261028/1685x1263_569027208762.jpg",
+          "image_source": "og"
+        },
+        {
+          "title": "不是0050！高股息ETF 00878配息「暴增152％」本季上看1.1元？除息日、 最後買進日一次看",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE01S2t0WTJIazU2X3VKY05FeDhIdFBzWGJabUVfSS1KWFZWV3NZb0x5b1pZR1VVTUlIdTd5V0ZSR19IOXB3T2hQM1lDbU1jdw?oc=5",
+          "source": "風傳媒",
+          "published_at": "2026-10-28T11:31:00+08:00",
+          "snippet": "",
+          "feed_id": "gnews-pf",
+          "image": "/assets/covers/invest.svg",
+          "image_source": "default"
+        },
+        {
+          "title": "00961逆勢漲3.9％勝00406A…同樣都月配！基金黑武士：高配息不等於高報酬",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE05UmFMcy1xNzRyVDg2TEJpSUlGTm9qbHRldFZudUY3Yjc3WXhyWms0X0pJZFlwRjdaaGZTNWpwRFZJMUZ1Z29UVGRHbDZHUWNBeEplTnBRa1dwRmZuRUE1aUxHVzVWYjc3TVZ1NzRPRktwVDhnNFI1TjVTem93QQ?oc=5",
+          "source": "UDN",
+          "published_at": "2026-10-28T09:37:49+08:00",
+          "snippet": "00961逆勢漲3.9％勝00406A…同樣都月配！基金黑武士：高配息不等於高報酬| 存股族愛ETF | 股市 UDN",
+          "feed_id": "gnews-pf",
+          "image": "/assets/covers/invest.svg",
+          "image_source": "default"
+        },
+        {
+          "title": "AI自研晶片迎量產潮 3大選股關鍵鎖定5檔ETF",
+          "url": "https://news.google.com/rss/articles/CBMi2wJBVV95cUxNb2RaSUQtbXhtZmMxcXVhSDRIUGdONnJhclBkR3U5aVNNdmJlU0hlTGRCUEdTMjFWQjNZbXMxRDZIRFdvWDViaC0wejYyZkstaWk4SlNqMVhFbGZacXpZV1Y0dk0zcV94OXNMTGt4aHRkNE5KWW9WWjlIbzQ1dERudm1JWVhodVBZOTVDSWx3QmN4ZFNtVV9rLV8wMU1PWUJYNFdudDN3bUFYanJMaUJnLWxKUFNuRHB1dkgzd1pwN1Z6WWRMWWxvZU5jemIxMlpvWHd0RWpfcFViNGdwTHNjQVlsWmVwQVZvWW93ODVQRXlzRVdzUTFfWDJsUHZZSVJKVF9Ua0dTSG9MWXdyaENCc085Y2M5NG4yc3pveGhCMzBoTmNqN2NlMEM3RTBWVGRrQXRtS1BZY0RaTWgyd0JLWlBIMlRxVzJHVnJOY0NIRDhUc0NUTkpHVGlSZw?oc=5",
+          "source": "Yahoo新聞",
+          "published_at": "2026-10-28T07:30:00+08:00",
+          "snippet": "理財最前線／AI自研晶片迎量產潮 3大選股關鍵鎖定5檔ETF Yahoo新聞",
+          "feed_id": "gnews-pf",
+          "image": "/assets/covers/invest.svg",
+          "image_source": "default"
+        },
+        {
+          "title": "最新台股ETF資金流！主動式規模逼近兆元，跨國債券與市值型成吸金關鍵",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPaEw3X1RUN1RYMXJOd1ZRZnlnTlBJRzdUM2c4RGFoY3BhRWVlbHMtaF9WN0hlcFhIc1RkRGx4M2F5UW9CY2NGaWRBT0JSNG5xQ2hJTFlWWVV4Q0RCVmlKcmpSRnlyaU5YUzI4Q0ZrT1R5TDNFRUgxNnFFd0U5MGxXajV3?oc=5",
+          "source": "CMoney投資網誌",
+          "published_at": "2026-10-28T06:39:25+08:00",
+          "snippet": "最新台股ETF資金流！主動式規模逼近兆元，跨國債券與市值型成吸金關鍵-財經焦點情報站 CMoney投資網誌",
+          "feed_id": "gnews-pf",
+          "image": "/assets/covers/invest.svg",
+          "image_source": "default"
+        },
+        {
+          "title": "台股ETF 逢低可布局",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE51TVIzdnBWYnNPTU0yR3BSVy01dU11LUtGdnFsTktWLUQ0aWJyeS1tY2tWcF95MGtxX3IxMV93R2FLM2hURHlISjFRNGRweG9FTTFlc3E5bGJtSGE5UW10SHNpQU5VY0VDXy1F?oc=5",
+          "source": "中時新聞網",
+          "published_at": "2026-10-28T04:10:00+08:00",
+          "snippet": "台股ETF 逢低可布局- 投資理財- 工商時報 中時新聞網",
+          "feed_id": "gnews-pf",
+          "image": "/assets/covers/invest.svg",
+          "image_source": "default"
+        },
+        {
+          "title": "台股震盪金融指數登峰! 帶飛高股息ETF創高",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9GdkdGd0FxUlFKd2lSb0tjcUlXSVNNZ0JxTmJwMVBZQV9kSmd4aTJERU1SSnFVSUZwdmNBVWFEVy1FYTFjTXR2eGM1Vi1kODk3YXFYbHVsczdZZzQ?oc=5",
+          "source": "非凡新聞台",
+          "published_at": "2026-10-28T04:07:24+08:00",
+          "snippet": "",
+          "feed_id": "gnews-pf",
+          "image": "/assets/covers/invest.svg",
+          "image_source": "default"
+        }
+      ]
+    },
+    {
+      "id": "macro",
+      "name": "總經與利率",
+      "blurb": "央行、利率、匯率與物價",
+      "stale_hours": 96,
+      "items": [
+        {
+          "title": "新台幣匯率33元受惠股 長鑫逆襲 記憶體股的勝算 台灣科技巨頭掀兆元融資狂潮",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNWWdQS3RPTUJudUxmTERKSTlfeHJ6d0tfdEpDSm11cFhZNElTMXFnREROZHZyODlKX1FkWmVucVYxM1ZyS0t3ZzdSYzUzSlByelNZY296RTVYTzlRdGxvOWpQRVJkNXdrRjhsM1JuNG1kbU9Od3BSdHl0UUtXX0lFQVQ4cFZsZjBVUENXWmh4TEFmWFBhMWc?oc=5",
+          "source": "理財周刊",
+          "published_at": "2026-10-28T15:36:50+08:00",
+          "snippet": "",
+          "feed_id": "gnews-fx",
+          "image": "/assets/covers/macro.svg",
+          "image_source": "default"
+        },
+        {
+          "title": "央行貨幣政策最新解讀！新台幣今年貶逾3%主因曝光，通膨與市場資金解析",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNX2I0TkxLVVpVa2hGeE1LRDVEM0VTa1R6WWMxQ3pIeDh2LTJpNmpKYnZzNFQtNUtid3BNWHQzZEwyVVhxalVHX2s1RkV6Q2pvLTdsMVdCc2w0Rm1PM1VtamtmWUdybmJkQnV1TE5BeEJuVWtMQndjb1dIbVhZSWtkSXh3?oc=5",
+          "source": "CMoney投資網誌",
+          "published_at": "2026-10-28T14:39:13+08:00",
+          "snippet": "央行貨幣政策最新解讀！新台幣今年貶逾3%主因曝光，通膨與市場資金解析-財經焦點情報站 CMoney投資網誌",
+          "feed_id": "gnews-fx",
+          "image": "/assets/covers/macro.svg",
+          "image_source": "default"
+        },
+        {
+          "title": "經濟成長、貿易順差贏韓國！新台幣卻貶更多 央行總裁揭匯率差異",
+          "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBGRUhfVjF0eG55RlNTemZNWV9mV0tNb0hFMi04aGpneTdjQU83d2VWS3BicV9RZ19pQTlvQVoxUkhiUlJfbEE0aTh1T0ZsNS1JVVHSAVJBVV95cUxQRkVIX1YxdHhueUZTU3pmTVlfZldLTW9IRTItOGhqZ3k3Y0FPN3dlVktwYnFfUWdfaUE5b0FaMVJIYlJSX2xBNGk4dU9GbDUtSVVR?oc=5",
+          "source": "NOWnews今日新聞",
+          "published_at": "2026-10-28T13:32:02+08:00",
+          "snippet": "",
+          "feed_id": "gnews-rate",
+          "image": "/assets/covers/macro.svg",
+          "image_source": "default"
+        },
+        {
+          "title": "〈分析〉高盛：AI對美國經濟的推力最快年底觸頂 留意利率與財富效應",
+          "url": "https://news.cnyes.com/news/id/6639361",
+          "source": "鉅亨網",
+          "published_at": "2026-10-28T13:30:02+08:00",
+          "snippet": "高盛Jan Hatzius稱，AI對美國成長的貢獻料在2026年底至2027年初觸頂，主因是邊際增幅放緩。 他指AI投資仍升，但《大而美法案》獎勵折舊效應消退，將壓抑資本支出成長…",
+          "feed_id": "cnyes-headline",
+          "image": "https://cimg.cnyes.cool/prod/news/6639361/o/754b2cb89f0eed0bfae42e1a489aaef3.jpg",
+          "image_source": "og"
+        },
+        {
+          "title": "楊金龍：若無預算撥補與能源補貼 油價續漲通膨率恐升",
+          "url": "https://www.cna.com.tw/news/afe/202610280125.aspx",
+          "source": "中央社",
+          "published_at": "2026-10-28T13:11:29+08:00",
+          "snippet": "台灣消費者物價指數（CPI）年增率已經連續5個月高於2%的通膨警戒線，立委關注央行是否考慮升息抑制通膨。中央銀行總裁楊金龍今天表示，通膨仍屬可控，不過若中油、台電能源補貼未持續，且…",
+          "feed_id": "cna-finance",
+          "image": "https://imgcdn.cna.com.tw/www/webphotos/WebOg/600/20261028/1841x966_285445360839.jpg",
+          "image_source": "og"
+        },
+        {
+          "title": "國內匯市：新台幣匯率今晨以32.440元開盤，升值1.2分",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPMGktbG8zbzd4WXpQbWdScTBkSnROV0NRRmtfQ213VXhlejZpZDREaXdjdndkVll0VWtraVRJR3VoakhONGNEWWVOZDFzZ2R6b2xMenlmMGhZam5BUEl0aWtoQUlQUldFakpIUTE1ZHZUWnRSMldMMXZQVnRmZ0hET3hRMzFVUE03?oc=5",
+          "source": "富聯網",
+          "published_at": "2026-10-28T09:00:00+08:00",
+          "snippet": "",
+          "feed_id": "gnews-fx",
+          "image": "/assets/covers/macro.svg",
+          "image_source": "default"
+        },
+        {
+          "title": "通膨還在燒，聯準會為何可能暫停升息？從美國兩難看台灣央行的選擇",
+          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9ibFRnVGdPMnRqQ3o0YTNyekpsczdOZDV2OEdRbXQ4ejFiU2RuU29ZbTd3eFFKNUQxNU5iaUFEREIweERHLTB4NGhOdmlON0lQQ0ZpUg?oc=5",
+          "source": "關鍵評論網",
+          "published_at": "2026-10-28T07:57:00+08:00",
+          "snippet": "通膨還在燒，聯準會為何可能暫停升息？從美國兩難看台灣央行的選擇 TNL The News Lens 關鍵評論網",
+          "feed_id": "gnews-rate",
+          "image": "/assets/covers/macro.svg",
+          "image_source": "default"
+        },
+        {
+          "title": "〈紐約匯市〉美元走升 市場聚焦各國央行利率決策會議",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1iX3UtM0JCZmNqd1FjS1Y2eVJlZ1dSSEhPOXlGY2xoc0xnT1JVSHJYaHMxNzF2dzFrZ0hha05fM1gteWpRYlFuRGpZQzMzZzQ?oc=5",
+          "source": "鉅亨網",
+          "published_at": "2026-10-28T05:41:46+08:00",
+          "snippet": "",
+          "feed_id": "gnews-rate",
+          "image": "/assets/covers/macro.svg",
+          "image_source": "default"
+        }
+      ]
+    },
+    {
+      "id": "retire",
+      "name": "退休與稅務",
+      "blurb": "退休規劃、勞退與稅務",
+      "stale_hours": 168,
+      "items": [
+        {
+          "title": "公務員退休金上個財政年度增2.1% 平均每人每月多約370元",
+          "url": "https://news.google.com/rss/articles/CBMivANBVV95cUxPdlF4TXdnZlNIOGExTXBUWWQtOE9tSXB5b002OXhKZlRiYkU0dS11LTBrTEY0ZHB3SzZVWkhNVkdtLWhNWE1DUDh2bVZVWDhkX2RTam9xY0VDb09GWm1saTJJeWUwamFaXzNlMTFvSjlOUkZ5cE9WMTJrOFRoY0l2VnA0bm5RSU1oUmQ1SFJFZzBhSDJzQjNMeEQ4WWstV2tUYzEzbkNJcHdFVnhFMXFtRXp0ZXZPOWNiNTNVeGhqSTJZSEdueEFjSmIwLTZiRGMtUDZ6V2oxVXFuOEs3T25Qc0tDMkRieEZQQnBxeWZhTFdFaDdHckpPUTVlSGV5NmxBVEVWQWctMnlXSUdBd3BORjNhcm9PNDkwODJVTkZwaWUyMkN5Ui1IcGZVUzVvM0YtQkhPS3JQM2pmWTZVaUxPODNtcFB2RVN0MXdMeDZZOGQtRS1oWm5zUml0YndXZTR6NmRCUFFHaU5xRExFNVVoVUg1Vm9FRUFxOGNvVnBiRDJ5U0VTMGVTNld2LUNiaVAzM1J4SnFoYXdEUWR3Q3FMdEJqTGkwU0JtcW0zV3l1Y0QwMEVIM1Z6ZnFoM0s?oc=5",
+          "source": "堅料網",
+          "published_at": "2026-10-28T15:32:00+08:00",
+          "snippet": "",
+          "feed_id": "gnews-retire",
+          "image": "/assets/covers/retire.svg",
+          "image_source": "default"
+        },
+        {
+          "title": "退休尪不想花錢在外吃飯、老婆只好天天煮！5年後兩人都後悔了",
+          "url": "https://ec.ltn.com.tw/article/breakingnews/5621101",
+          "source": "自由時報",
+          "published_at": "2026-10-28T15:08:41+08:00",
+          "snippet": "隨著高齡化社會來臨，如何管理退休資產成為熱門議題，有人擔心退休生活沒錢會很痛苦，因此節儉生活，但若過度節儉，有時反而會帶來意想不到的後悔。日本一名74歲阿嬤千鶴女士（化名）...…",
+          "feed_id": "ltn-business",
+          "image": "https://img.ltn.com.tw/Upload/business/page/800/2026/10/28/phpqNx9xJ.jpg",
+          "image_source": "og"
+        },
+        {
+          "title": "退休金360萬到手、6旬阿伯半年後看帳戶卻傻眼了？問題出在「這一步」",
+          "url": "https://ec.ltn.com.tw/article/breakingnews/5620952",
+          "source": "自由時報",
+          "published_at": "2026-10-28T12:26:53+08:00",
+          "snippet": "退休後拿到一筆可觀的退休金，不少人第一個念頭都是：與其放在銀行慢慢被通膨侵蝕，不如拿去投資，至少還有機會增值。日媒報導，一名65歲男子退休後領到1800萬日圓（約新台幣3...…",
+          "feed_id": "ltn-business",
+          "image": "https://img.ltn.com.tw/Upload/business/page/800/2026/10/28/phpY51zf7.jpg",
+          "image_source": "og"
+        },
+        {
+          "title": "退休金怎麼花才安心？「雙軌現金流」4％法則這樣算！專家：因應股災要有一筆預備金",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE4xSjU0c3NXeTJoYVRGMUNtNURNVEhXdi1VdEdUTHZ0M04xN0tkS3J6TmJFRm43d0FERDJrYXJXT0VHNGMyS2t0cFZIRGZxbUU?oc=5",
+          "source": "TVBS 健康2.0",
+          "published_at": "2026-10-28T10:15:00+08:00",
+          "snippet": "",
+          "feed_id": "gnews-retire",
+          "image": "/assets/covers/retire.svg",
+          "image_source": "default"
+        },
+        {
+          "title": "保單明明沒解約，竟被國稅局追稅10.6萬元！父母做錯「1件事」 踩中贈與稅地雷",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE51RV9oNkkxOEdsUzZweFF0aW9HRkdLZXY0V0haUVF6M0c3TTQ5dklfRWpXdnBINlFGM2FVSjhLekQwYTdrNzhPLUNmWG1nMHd2?oc=5",
+          "source": "風傳媒",
+          "published_at": "2026-10-28T10:00:00+08:00",
+          "snippet": "",
+          "feed_id": "gnews-tax",
+          "image": "/assets/covers/retire.svg",
+          "image_source": "default"
+        },
+        {
+          "title": "退休每月可領5.4萬年金！勞保退休金65歲領虧大了，專家曝最佳請領時間點： 這方式最賺",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE42Ni15aGZjWnF6aFZvc1N4b0FIOHRDNUdMSW9PVmtpNHZMb2JXdW84ZkJKejQ2STBHS3BpdkI2aFVFX1g3cmQyNEIzaC1UcWti?oc=5",
+          "source": "風傳媒",
+          "published_at": "2026-10-28T09:30:00+08:00",
+          "snippet": "",
+          "feed_id": "gnews-retire",
+          "image": "/assets/covers/retire.svg",
+          "image_source": "default"
+        },
+        {
+          "title": "台股震盪爆8700億天量！勞退自提率破兩成，退休理財抗震，台積電臨考驗",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPQi1pU2hiY1pSYmExdkhSOUFkV0VLX3RNOEpXUjl3T2JtUGJrdXQ0WFR0RFhrUFMzWHhaX3FGYTZ0RF9Fb0k5YTZELWFwdGp2OE5QaXo5SExqdlBrTkZlMW50TnFBdTQ4dDViUkFzOEJqbHVKcXVBYkdSS2c0TmV5ZTdB?oc=5",
+          "source": "CMoney投資網誌",
+          "published_at": "2026-10-28T06:09:53+08:00",
+          "snippet": "台股震盪爆8700億天量！勞退自提率破兩成，退休理財抗震，台積電臨考驗-財經焦點情報站 CMoney投資網誌",
+          "feed_id": "gnews-retire",
+          "image": "/assets/covers/retire.svg",
+          "image_source": "default"
+        },
+        {
+          "title": "校長卸下職務以為迎來新生活！妻突問400萬退休金一張紙讓他傻眼",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBaX1llQjJzdWNQR2ZULTEtSjJJTUZSY0ZoWUg2dTIzVlphMk1kYjNkMzZvc0J1THkwYXdmZG12cWVGaXozTWdwYmJfSDZaTDgtcjJQQThMUDFzMk5SZzVrTzJ1Q0czTVZLTEFMQ0JR?oc=5",
+          "source": "中時新聞網",
+          "published_at": "2026-10-28T05:00:30+08:00",
+          "snippet": "",
+          "feed_id": "gnews-retire",
+          "image": "/assets/covers/retire.svg",
+          "image_source": "default"
+        }
+      ]
+    }
+  ]
+}
