@@ -246,7 +246,7 @@ def json_ld(payload: dict) -> str:
     return json.dumps(payload, ensure_ascii=False).replace("<", "\\u003c")
 
 
-def page(template: str, settings: dict, *, title: str, description: str, canonical: str, image: str, main: str, current: str, og_type: str = "website") -> str:
+def page(template: str, settings: dict, *, title: str, description: str, canonical: str, image: str, main: str, current: str, og_type: str = "website", og_title: str = "") -> str:
     nav = {"TODAY": "", "ARCHIVE": "", "ABOUT": ""}
     if current in nav:
         nav[current] = 'aria-current="page"'
@@ -258,7 +258,7 @@ def page(template: str, settings: dict, *, title: str, description: str, canonic
             "DESCRIPTION": esc(description),
             "CANONICAL": esc(canonical),
             "OG_TYPE": esc(og_type),
-            "OG_TITLE": esc(title),
+            "OG_TITLE": esc(og_title or title),
             "OG_IMAGE": esc(image),
             "OG_IMAGE_ALT": esc(title),
             "EXTRA_HEAD": "",
@@ -281,6 +281,30 @@ def page(template: str, settings: dict, *, title: str, description: str, canonic
             "YEAR": year,
         },
     )
+
+
+def cover_jpg(source: Path, dest: Path, width: int = 1200, height: int = 630) -> None:
+    from PIL import Image
+
+    image = Image.open(source).convert("RGB")
+    scale = max(width / image.width, height / image.height)
+    resized = image.resize((max(width, round(image.width * scale)), max(height, round(image.height * scale))), Image.Resampling.LANCZOS)
+    left = max(0, (resized.width - width) // 2)
+    top = max(0, (resized.height - height) // 2)
+    cropped = resized.crop((left, top, left + width, top + height))
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    cropped.save(dest, "JPEG", quality=85, optimize=False, progressive=False)
+
+
+def about_lead(about_md: str) -> str:
+    text = re.sub(r"<!--.*?-->", "", about_md or "", flags=re.S).strip()
+    paragraphs = [block.strip() for block in re.split(r"\n\s*\n", text) if block.strip() and not block.strip().startswith("#")]
+    if not paragraphs:
+        return "藝世錄金融理財日報。"
+    first = paragraphs[0].split("\n", 1)[0].strip()
+    if "。" in first:
+        return first.split("。", 1)[0] + "。"
+    return first
 
 
 def absolute_image(settings: dict, image_url: str) -> str:
@@ -440,6 +464,18 @@ def remove_stale(root: Path, posts: list[dict]) -> None:
         for child in archive.iterdir():
             if child.is_dir() and re.fullmatch(r"\d{4}-\d{2}-\d{2}", child.name) and child.name not in keep_days:
                 shutil.rmtree(child)
+    media = root / "media"
+    keep_media = {post["date"] + "/" + post["slug"] + ".jpg" for post in posts}
+    if media.exists():
+        parents = set()
+        for jpg in list(media.glob("*/*.jpg")):
+            key = f"{jpg.parent.name}/{jpg.name}"
+            parents.add(jpg.parent)
+            if key not in keep_media:
+                jpg.unlink()
+        for parent in parents:
+            if parent.exists() and not any(parent.iterdir()):
+                parent.rmdir()
     column = root / "column"
     if column.exists():
         for day_dir in column.iterdir():
@@ -459,25 +495,30 @@ def build(root: Path) -> list[dict]:
     template = (root / "templates" / "layout.html").read_text(encoding="utf-8")
     about_html = prose_to_html((root / "data" / "about.md").read_text(encoding="utf-8")) if (root / "data" / "about.md").exists() else ""
     site = settings["site_url"]
-    brand_image = site + "/assets/og.png"
+    about_md = (root / "data" / "about.md").read_text(encoding="utf-8") if (root / "data" / "about.md").exists() else ""
+    site_description = about_lead(about_md)
+    cover_jpg(root / "assets" / "og.png", root / "assets" / "og.jpg")
+    brand_image = site + "/assets/og.jpg"
+    share_images = {}
+    for post in posts:
+        dest = root / "media" / post["date"] / f"{post['slug']}.jpg"
+        cover_jpg(root / "posts" / post["date"] / post["image"], dest)
+        share_images[post["slug"]] = absolute_image(settings, f"/media/{post['date']}/{post['slug']}.jpg")
     lead = None
     if posts:
         latest_day = max(post["date"] for post in posts)
         lead = min((post for post in posts if post["date"] == latest_day), key=lambda post: post["order"])
-    latest_image = absolute_image(settings, lead["image_url"]) if lead else brand_image
-    home_description = lead["summary"] if lead else "Show 的保險與理財專欄。"
-    home_title = settings["site_name"]
-    if lead:
-        home_title = f"{format_date(lead['date'])}｜{settings['site_name']}"
+    home_title = f"{format_date(lead['date'])}｜{settings['site_name']}" if lead else settings["site_name"]
     write_text(
         root / "index.html",
         page(
             template,
             settings,
             title=home_title,
-            description=home_description,
+            og_title=settings["site_name"],
+            description=site_description,
             canonical=site + "/",
-            image=latest_image,
+            image=brand_image,
             main=render_home(posts, about_html),
             current="TODAY",
         ),
@@ -492,7 +533,7 @@ def build(root: Path) -> list[dict]:
                 title=f"{format_date(day)}｜{settings['site_name']}",
                 description=f"{format_date(day)}的專欄。",
                 canonical=f"{site}/archive/{day}/",
-                image=absolute_image(settings, next(post["image_url"] for post in posts if post["date"] == day)),
+                image=share_images[min((post for post in posts if post["date"] == day), key=lambda post: post["order"])["slug"]],
                 main=render_day(day, posts),
                 current="ARCHIVE",
             ),
@@ -507,7 +548,7 @@ def build(root: Path) -> list[dict]:
                 title=f"{post['title']}｜{settings['site_name']}",
                 description=post["summary"],
                 canonical=canonical,
-                image=absolute_image(settings, post["image_url"]),
+                image=share_images[post["slug"]],
                 main=render_article(post),
                 current="",
                 og_type="article",
