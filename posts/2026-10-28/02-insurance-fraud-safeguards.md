@@ -4,7 +4,7 @@ date: 2026-10-28
 category: "保險新聞"
 summary: "針對近日疑涉詐保的社會案件，金管會說明從被保險人書面同意、招攬、核保到理賠，現行已有多道防範機制。"
 image: "02-insurance-fraud-safeguards.webp"
-image_credit: "圖片來源：中央社"
+image_credit: "示意圖（AI 生成）"
 source_name: "中央社"
 source_url: "https://www.cna.com.tw/news/afe/202610270261.aspx"
 tags: [詐保, 保險利益, 被保險人同意, 核保, 理賠, 金管會]

@@ -40,7 +40,7 @@ date: 2026-10-29
 category: 保險
 summary: 銷售數字變高，不代表這張保單適合你。先看每個月出不出得來。
 image: 01-foreign-policy.webp
-image_credit: 圖片來源：中央社
+image_credit: 示意圖（AI 生成）
 source_name: 中央社
 source_url: https://www.example.com/story
 tags:
@@ -67,7 +67,7 @@ tags:
 | `category` | 是 | 例如 `保險`、`理財`、`利率`、`退休` |
 | `summary` | 是 | 首頁卡片上的一兩句話 |
 | `image` | 是 | 同資料夾的圖片檔名 |
-| `image_credit` | 否 | 圖下的小字。新聞照片寫 `圖片來源：中央社`；沒有可用照片時寫 `示意圖（AI 生成）` |
+| `image_credit` | 否 | 圖下的小字。沒寫時預設為 `示意圖（AI 生成）` |
 | `source_name` | 是 | 原媒體名稱 |
 | `source_url` | 是 | 原文章的 http(s) 連結，顯示在文末「新聞來源」 |
 | `tags` | 否 | 字串清單。含 `範例` 時，頁面上會標成可替換 |
@@ -92,18 +92,18 @@ Pages 若已經是 **Deploy from a branch**、`main`、`/ (root)`，不用再改
 
 若自動提交出現 403：Settings → Actions → General → Workflow permissions 改成 Read and write permissions。
 
-## 換成新聞原圖
+## 圖片
+
+文章預設使用 AI 插圖，檔名與 `.md` 相同，圖說是 `示意圖（AI 生成）`。沒有寫 `image_credit` 時，網站也會顯示這句。
+
+若某一篇要改用新聞原圖，可以另外執行（需要 Pillow，每天發布網頁不用）：
 
 ```bash
 python3 -m pip install pillow
 python3 scripts/fetch_source_image.py posts/2026-10-29/01-foreign-policy.md
 ```
 
-這個指令才需要 Pillow。每天發布網頁的流程不用它。
-
-它讀 `source_url`，抓原文，依序找 `og:image`、`twitter:image`，再找文內第一張夠大的照片。會略過全站預設圖（例如中央社的 `pic_fb.jpg`）、logo，以及寬度大約不到 400 像素的圖。若連結是 Google 新聞，會先跟著轉址到原媒體。
-
-找到的話，存成跟文章同名的 `.webp`（覆蓋原本那張圖），並把 front matter 的 `image` 設成這個檔名、`image_credit` 設成 `圖片來源：` 加上 `source_name`。找不到就保留現有圖片，把 `image_credit` 設成 `示意圖（AI 生成）`，程式仍以 0 結束。不會改文章內文。
+它讀 `source_url`，抓原文，依序找 `og:image`、`twitter:image`，再找文內第一張夠大的照片。會略過全站預設圖（例如中央社的 `pic_fb.jpg`）、logo，以及寬度大約不到 400 像素的圖。若連結是 Google 新聞，會先跟著轉址到原媒體。找到的話會覆蓋同名 `.webp`，並把 `image_credit` 改成 `圖片來源：` 加上 `source_name`。找不到就保留現有插圖。不會改文章內文。
 
 ## 選題（不會發布）
 

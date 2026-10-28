@@ -214,7 +214,7 @@ def load_posts(root: Path) -> list[dict]:
                 "image_url": f"/posts/{day}/{image_name}",
                 "source_name": meta["source_name"].strip(),
                 "source_url": meta["source_url"].strip(),
-                "image_credit": str(meta.get("image_credit") or "").strip(),
+                "image_credit": str(meta.get("image_credit") or "").strip() or "示意圖（AI 生成）",
                 "tags": list(meta.get("tags") or []),
                 "body": body.strip(),
                 "html": render_markdown(body),
