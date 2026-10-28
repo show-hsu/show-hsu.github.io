@@ -338,7 +338,7 @@ def render_home(posts: list[dict], about_html: str) -> str:
         recent = '<section class="recent"><h2>近期</h2><ol class="archive-list">' + "".join(rows) + "</ol></section>"
     about = ""
     if about_html:
-        about = f'<section class="about" id="about"><h2>關於 Show</h2><div class="prose">{about_html}</div></section>'
+        about = f'<section class="about" id="about"><h2>關於 藝世錄</h2><div class="prose">{about_html}</div></section>'
     return (
         '<article class="day-lead">'
         f'<p class="kicker">{esc(format_date(latest))} · {weekday_label(latest)}</p>'
@@ -421,7 +421,7 @@ def render_day(day: str, posts: list[dict]) -> str:
 
 def render_about(about_html: str) -> str:
     return (
-        '<article class="about"><p class="kicker">ABOUT</p><h1>關於 Show</h1>'
+        '<article class="about"><h1>關於 藝世錄</h1>'
         f'<div class="prose">{about_html}</div>'
         '<p class="share-row"><a href="/">回到今天的專欄</a></p></article>'
     )
@@ -531,7 +531,7 @@ def build(root: Path) -> list[dict]:
         page(
             template,
             settings,
-            title=f"關於 Show｜{settings['site_name']}",
+            title=f"關於 藝世錄｜{settings['site_name']}",
             description=f"{settings['owner_name']}（Show）的{settings['site_name']}。",
             canonical=site + "/about/",
             image=brand_image,
