@@ -327,7 +327,7 @@ def card(post: dict, *, eager: bool) -> str:
         f'<img src="{esc(post["image_url"])}" alt="" width="1200" height="675" {loading}>'
         f"{credit}</span>"
         '<span class="feature-body">'
-        f'<p class="kicker">{esc(post["category"])}</p>'
+        f'<p class="tag">{esc(post["category"])}</p>'
         f'<h2>{esc(post["title"])}</h2>'
         f'<p class="summary">{esc(post["summary"])}</p>'
         f'<p class="meta"><time datetime="{esc(post["date"])}">{esc(format_date(post["date"]))}</time></p>'
@@ -338,7 +338,8 @@ def card(post: dict, *, eager: bool) -> str:
 def render_home(posts: list[dict], about_html: str) -> str:
     if not posts:
         return (
-            '<article class="day-lead"><p class="kicker">專欄</p>'
+            '<article class="day-lead"><p class="eyebrow">Daily Column</p>'
+            '<p class="kicker">專欄</p>'
             "<h1>藝世錄金融理財日報</h1>"
             '<p class="lead">還沒有文章。新的一篇放進 posts/ 之後就會出現在這裡。</p></article>'
         )
@@ -359,14 +360,15 @@ def render_home(posts: list[dict], about_html: str) -> str:
                 f'<li><a href="/archive/{esc(day)}/"><time datetime="{esc(day)}">{esc(format_date(day))}</time>'
                 f'<span>{weekday_label(day)} · {count} 篇</span></a></li>'
             )
-        recent = '<section class="recent"><h2>近期</h2><ol class="archive-list">' + "".join(rows) + "</ol></section>"
+        recent = '<section class="recent"><p class="eyebrow">Earlier</p><h2>近期</h2><ol class="archive-list">' + "".join(rows) + "</ol></section>"
     about = ""
     if about_html:
-        about = f'<section class="about" id="about"><h2>關於 藝世錄</h2><div class="prose">{about_html}</div></section>'
+        about = f'<section class="about" id="about"><p class="eyebrow">About</p><h2>關於 藝世錄</h2><div class="prose">{about_html}</div></section>'
     return (
         '<article class="day-lead">'
-        f'<p class="kicker">{esc(format_date(latest))} · {weekday_label(latest)}</p>'
+        '<p class="eyebrow">Daily Column</p>'
         "<h1>今天的專欄</h1>"
+        f'<p class="edition-meta">{esc(format_date(latest))} · {weekday_label(latest)}</p>'
         '<p class="lead">挑幾則和保險、理財有關的新聞，用我的話寫給你看。</p>'
         f'<div class="feature-list">{cards}</div>'
         "</article>"
@@ -389,7 +391,8 @@ def render_article(post: dict) -> str:
     return (
         "<article>"
         f"{figure}"
-        f'<p class="kicker">{esc(post["category"])}</p>'
+        '<p class="eyebrow">Column</p>'
+        f'<p class="tag">{esc(post["category"])}</p>'
         f'<h1>{esc(post["title"])}</h1>'
         f'<p class="edition-meta"><time datetime="{esc(post["date"])}">{esc(format_date(post["date"]))}</time> · {weekday_label(post["date"])}</p>'
         f"{flag}<div class=\"prose\">{post['html']}</div>"
@@ -413,7 +416,7 @@ def render_archive(posts: list[dict]) -> str:
         )
     body = "".join(rows) or '<p class="empty">還沒有文章。</p>'
     return (
-        '<article class="archive-block"><p class="kicker">ARCHIVE</p><h1>專欄彙整</h1>'
+        '<article class="archive-block"><p class="eyebrow">Archive</p><h1>專欄彙整</h1>'
         '<p class="lead">每一天的文章都留在這裡。</p>'
         f'<ol class="archive-list">{body}</ol></article>'
     )
@@ -436,6 +439,7 @@ def render_day(day: str, posts: list[dict]) -> str:
         links.append("<span></span>")
     return (
         '<article class="day-lead">'
+        '<p class="eyebrow">Daily Column</p>'
         f'<p class="kicker">當日專欄</p><h1>{esc(format_date(day))}</h1>'
         f'<p class="edition-meta">{weekday_label(day)} · {len(chosen)} 篇</p>'
         f'<div class="feature-list">{cards}</div>'
@@ -445,7 +449,7 @@ def render_day(day: str, posts: list[dict]) -> str:
 
 def render_about(about_html: str) -> str:
     return (
-        '<article class="about"><h1>關於 藝世錄</h1>'
+        '<article class="about"><p class="eyebrow">About</p><h1>關於 藝世錄</h1>'
         f'<div class="prose">{about_html}</div>'
         '<p class="share-row"><a href="/">回到今天的專欄</a></p></article>'
     )
