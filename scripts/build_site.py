@@ -451,6 +451,7 @@ def render_about(about_html: str) -> str:
     return (
         '<article class="about"><p class="eyebrow">About</p><h1>關於 藝世錄</h1>'
         f'<div class="prose">{about_html}</div>'
+        '<p class="share-row"><a href="/profile/">認識我 →</a></p>'
         '<p class="share-row"><a href="/">回到今天的專欄</a></p></article>'
     )
 
@@ -584,7 +585,7 @@ def build(root: Path) -> list[dict]:
             current="ABOUT",
         ),
     )
-    urls = [site + "/", site + "/archive/", site + "/about/"]
+    urls = [site + "/", site + "/archive/", site + "/about/", site + "/profile/"]
     urls.extend(f"{site}/archive/{day}/" for day in sorted({post["date"] for post in posts}))
     urls.extend(f"{site}/column/{post['date']}/{post['slug']}/" for post in posts)
     lines = [
