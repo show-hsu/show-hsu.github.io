@@ -315,7 +315,7 @@ def render_home(posts: list[dict], about_html: str) -> str:
     if not posts:
         return (
             '<article class="day-lead"><p class="kicker">專欄</p>'
-            "<h1>Show 的金融保險理財日報</h1>"
+            "<h1>藝世錄金融理財日報</h1>"
             '<p class="lead">還沒有文章。新的一篇放進 posts/ 之後就會出現在這裡。</p></article>'
         )
     latest = posts[0]["date"]
@@ -532,7 +532,7 @@ def build(root: Path) -> list[dict]:
             template,
             settings,
             title=f"關於 Show｜{settings['site_name']}",
-            description=f"{settings['owner_name']}（Show）的金融保險理財日報。",
+            description=f"{settings['owner_name']}（Show）的{settings['site_name']}。",
             canonical=site + "/about/",
             image=brand_image,
             main=render_about(about_html),
